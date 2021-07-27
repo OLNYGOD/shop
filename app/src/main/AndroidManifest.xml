@@ -14,13 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shop"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ParkingActivity"></activity>
+        <activity android:name=".BusActivity"></activity>
+        <activity android:name=".MovieActivity" />
+        <activity android:name=".ParkingActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".NicknameActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

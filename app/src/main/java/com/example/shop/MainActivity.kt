@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -18,7 +17,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_nickname.*
 import kotlinx.android.synthetic.main.row_function.view.*
 import org.w3c.dom.Text
 
@@ -31,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         "Camera",
         "Invite friend",
         "Parking",
+        "Movie",
         "Download coupons",
         "News",
         "Map"
@@ -68,9 +67,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         //RecyclerView 讓畫面可以滑動
-        recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false) //清單式的管理畫面
-        recycler.setHasFixedSize(true) //固定大小
-        recycler.adapter = FunctionAdapter()
+        mainrecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false) //清單式的管理畫面
+        mainrecycler.setHasFixedSize(true) //固定大小
+        mainrecycler.adapter = FunctionAdapter()
     }
 
     //https://ithelp.ithome.com.tw/articles/10220196 RecyclerView
@@ -108,6 +107,7 @@ class MainActivity : AppCompatActivity() {
         when(position){
             1->startActivity(Intent(this, ContactActivity::class.java))
             2->startActivity(Intent(this, ParkingActivity::class.java))
+            3->startActivity(Intent(this, MovieActivity::class.java))
         }
     }
 
